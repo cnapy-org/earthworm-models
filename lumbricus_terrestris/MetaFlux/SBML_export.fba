@@ -78,10 +78,12 @@ ATPSYN-RXN # needs to be added although it is in the model?
 #TCM1043
 # URACIL-PRIBOSYLTRANS-RXN of L. rubellus has high similarity to
 # ENSVPPG00000009174 (BLAST score 407, e-value 1e-144)
-PPI + UMP -> PRPP + URACIL
-PRPP + URACIL -> PPI + UMP
-# first step in uracil synthesis, probably (also) catalyzed by glutamate decarboxylase
-L-ASPARTATE + PROTON -> B-ALANINE + CARBON-DIOXIDE
+#PPI + UMP -> PRPP + URACIL
+#PRPP + URACIL -> PPI + UMP
+## first step in uracil synthesis, probably (also) catalyzed by glutamate decarboxylase
+## L-ASPARTATE + PROTON -> B-ALANINE + CARBON-DIOXIDE
+TRANS-RXN2TEA-1
+TRANS-RXN2TEA-2
 
 # The reactions specified here will not be include in the generated model -- may be empty.
 # These reactions are removed from the fixed reactions set.
@@ -126,7 +128,7 @@ GLT[CCO-CYTOSOL]    0.036169235            # from NCBI Taxon 131567 (cellular or
 GLN[CCO-CYTOSOL]    0.036169235            # from NCBI Taxon 131567 (cellular organisms)
 GTP[CCO-CYTOSOL]    0.03500503             # from NCBI Taxon 131567 (cellular organisms)
 THR[CCO-CYTOSOL]    0.034845974            # from NCBI Taxon 131567 (cellular organisms)
-#ASN[CCO-CYTOSOL]    0.033155132            # from NCBI Taxon 131567 (cellular organisms)
+ASN[CCO-CYTOSOL]    0.033155132            # from NCBI Taxon 131567 (cellular organisms)
 L-ASPARTATE[CCO-CYTOSOL] 0.033155132       # from NCBI Taxon 131567 (cellular organisms)
 ATP[CCO-CYTOSOL]    0.030569924            # from NCBI Taxon 131567 (cellular organisms)
 PRO[CCO-CYTOSOL]    0.030435089            # from NCBI Taxon 131567 (cellular organisms)
@@ -204,7 +206,6 @@ WATER[CCO-EXTRACELLULAR] :lower-bound -3000.0 :upper-bound 3000.0
 OXYGEN-MOLECULE[CCO-MIT-LUM] # for respiration, can be replaced by oxygen diffusion into the mitochondrion later
 #CARBON-DIOXIDE[CCO-CYTOSOL] :lower-bound -100 :upper-bound 0
 # other currently necessary metabolites
-#ASN[CCO-CYTOSOL] :lower-bound 0.0 :upper-bound 10.0 # only weak evidence for presence of asparagine synthase (glutamine-hydrolysing) [EC:6.3.5.4] K01953
 ## arginine and proline are interconvertible 
 #ARG[CCO-CYTOSOL] :lower-bound 0.0 :upper-bound 10.0
 #PRO[CCO-CYTOSOL] :lower-bound 0.0 :upper-bound 10.0
@@ -259,6 +260,7 @@ PYRIDOXAL_PHOSPHATE[CCO-CYTOSOL] :lower-bound -1.0 :upper-bound 0.0
 THIAMINE-PYROPHOSPHATE[CCO-CYTOSOL] :lower-bound -1.0 :upper-bound 0.0
 PROTON[CCO-EXTRACELLULAR] :lower-bound -100 :upper-bound 100.0
 FE+2[CCO-CYTOSOL] :lower-bound -1.0 :upper-bound 0.0 # for protoheme production
+ASN[CCO-CYTOSOL] :lower-bound -1.0 :upper-bound 0.0
 # essential AA for metazoans:
 LEU[CCO-CYTOSOL] :lower-bound -1.0 :upper-bound 0.0
 VAL[CCO-CYTOSOL] :lower-bound -1.0 :upper-bound 0.0
